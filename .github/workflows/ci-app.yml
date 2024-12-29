@@ -1,0 +1,14 @@
+name: ci-app
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - name: setup
+        run: make setup
+      - name: lint
+        run: make lint
+      - name: test
+        run: make test
